@@ -44,6 +44,6 @@ public class MainActivity extends AppCompatActivity {
         if (anak.isChecked()) Umur += " " + anak.getText() + " ";
         if (dewasa.isChecked()) Umur += " " + dewasa.getText() + " ";
         /*RadioButton rb = (RadioButton) findViewById(rgstatus.getCheckedRadioButtonId());*/
-        tvHasil.setText("Nama anda " + nama.getText().toString() + " dari " + asal + " menuju " + tujuan + " keberangkatan " /*+ rb.getText().toString()*/ + Umur);
+        tvHasil.setText("Nama anda " + nama.getText().toString() + " dari " + asal.getSelectedItem().toString() + " menuju " + tujuan.getSelectedItem().toString() + " keberangkatan " /*+ rb.getText().toString()*/ + Umur);
     }
 }
