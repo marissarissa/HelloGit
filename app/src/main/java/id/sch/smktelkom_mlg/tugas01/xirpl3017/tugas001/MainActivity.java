@@ -5,13 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     EditText etNama;
     Button bOk;
     Spinner spAsal, spTujuan;
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         lansia = (CheckBox) findViewById(R.id.checkBoxLansia);
         dewasa = (CheckBox) findViewById(R.id.checkBoxDewasa);
         anak = (CheckBox) findViewById(R.id.checkBoxAnak);
+        lansia.setOnCheckedChangeListener(this);
+        dewasa.setOnCheckedChangeListener(this);
+        anak.setOnCheckedChangeListener(this);
 
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
         bOk.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void doClick() {
         String hasil = null;
+        int startlen = hasil.length();
+        if (lansia.isChecked()) hasil += lansia.getText() + "\n";
+        if (dewasa.isChecked()) hasil += dewasa.getText() + "\n";
+        if (anak.isChecked()) hasil += anak.getText() + "\n";
+        if (hasil.length() == startlen) hasil += "tidak ada pilihan";
 
         if (rgBerangkat.getCheckedRadioButtonId() != -1) {
             RadioButton rb = (RadioButton)
@@ -89,5 +98,9 @@ public class MainActivity extends AppCompatActivity {
             etNama.setError(null);
         }
         return valid;
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean b) {
     }
 }
