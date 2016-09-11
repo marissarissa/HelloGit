@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tujuan">
+
+        <item> DPS</item>
+        <item>LOP</item>
+        <item>KOE</item>
+        <item>SWQ</item>
+    </string-array>
+
+</resources>

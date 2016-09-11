@@ -32,11 +32,15 @@
             android:layout_gravity="center_horizontal"
             android:src="@drawable/logo" />
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NAMA PEMESAN" />
+            android:hint="NAMA PEMESANAN" />
+        </android.support.design.widget.TextInputLayout>
 
         <EditText
             android:id="@+id/editTextNama"
@@ -53,7 +57,8 @@
         <Spinner
             android:id="@+id/spinnerasal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:entries="@array/asal" />
 
         <TextView
             android:id="@+id/textView2"
@@ -65,18 +70,20 @@
             android:id="@+id/spinnertujuan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal" />
-
-        <RadioButton
-            android:id="@+id/radioButtonPP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="Pulang-Pergi" />
+            android:layout_gravity="center_horizontal"
+            android:entries="@array/tujuan" />
 
         <RadioGroup
+            android:id="@+id/rgBerangkat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonPP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Pulang-Pergi" />
 
             <RadioButton
                 android:id="@+id/radioButtonSatu"
@@ -85,34 +92,45 @@
                 android:checked="false"
                 android:text="Satu Pemberangkatan" />
 
-            <CheckBox
-                android:id="@+id/checkBoxBiaya"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="BIAYA" />
         </RadioGroup>
 
         <CheckBox
-            android:id="@+id/checkBoxJadwal"
+            android:id="@+id/checkBoxLansia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="JADWAL KEBERANGKATAN" />
+            android:text="LANSIA" />
 
         <CheckBox
-            android:id="@+id/checkBoxKursi"
+            android:id="@+id/checkBoxDewasa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="CHECK KURSI" />
+            android:text="DEWASA" />
+
+        <CheckBox
+            android:id="@+id/checkBoxAnak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="ANAK-ANAK" />
 
         <Button
             android:id="@+id/button"
+            style="@style/Base.TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="CARI" />
+            android:background="@drawable/bgbtn"
+            android:text="CARI"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textViewHasil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="HASIL" />
 
     </LinearLayout>
 </ScrollView>
